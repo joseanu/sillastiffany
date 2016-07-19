@@ -18,8 +18,12 @@ $spacing-unit:     30px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
+
 $brand1-color:      #7ACAC7;
-$brand2-color:      #A35A6D;
+$brand2-color:      #CA7ABA;
+$brand3-color:      #07EFE6;
+$brand4-color:      #BC9F18;
+$brand5-color:      #A2880D;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -39,6 +43,9 @@ header {
 
 header .cinta_azul {
 	background-color: $brand1-color;
+	background-image: url(../img/sillas.svg);
+	background-size: 233px 60px;
+	background-position: center;
 	height: 60px;
 }
 
@@ -56,7 +63,7 @@ header .cinta_azul {
 }
 
 .morado {
-	background-color: $brand2-color;
+	background-color: $brand5-color;
 }
 .blanco {
 	background-color: #fff;
