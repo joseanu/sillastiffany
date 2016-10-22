@@ -33,6 +33,10 @@ $brand4-color:      #BC9F18;
 $brand5-color:      #A2880D;
 // Las variables
 
+// http://purecss.io/forms/
+@import "_forms.min.scss";
+// http://purecss.io/forms/
+
 h1, h2, h3, h4, h5 {
 	font-family: $head-font-family;
 }
@@ -45,6 +49,14 @@ h1, h2, h3, h4, h5 {
 	content: "";
 	display: table;
 	clear: both;
+}
+
+.centradito {
+	text-align: center;
+
+	.pure-form-stacked input {
+		margin: 0.25em auto;
+	}
 }
 
 //HEADER
