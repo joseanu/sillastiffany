@@ -1,56 +1,90 @@
 ---
 layout: default
 ---
-<div class="row morado">
-	<div class="hidden-sm-down col-md-1"></div>
-	<div class="col-xs-6 col-md-4 col-lg-3">
-		<h2 class="h5">Contáctanos</h2>
-		<a href="tel:+523338157303">33 38 15 73 03</a><br>
-		<a href="tel:+523316708382">33 16 70 83 82</a><br>
-		<a href="tel:+523313504003">33 13 50 40 03</a><br>
-		<a href="tel:+523316705224">33 16 70 52 24</a>
-	
-	
-	
-	</div>
-	<div class="col-xs-6 col-md-6 col-lg-7 blanco fotona">
-	<img
-		sizes="(max-width: 1280px) 100vw, 1280px"
-		srcset="
-		//res.cloudinary.com/dr88lzs3l/image/upload/c_scale,w_280/q_auto,f_auto/v1467930888/foto-252_ccsnan.jpg 280w,
-		//res.cloudinary.com/dr88lzs3l/image/upload/c_scale,w_480/q_auto,f_auto/v1467930888/foto-252_ccsnan.jpg 480w,
-		//res.cloudinary.com/dr88lzs3l/image/upload/c_scale,w_680/q_auto,f_auto/v1467930888/foto-252_ccsnan.jpg 680w,
-		//res.cloudinary.com/dr88lzs3l/image/upload/c_scale,w_880/q_auto,f_auto/v1467930888/foto-252_ccsnan.jpg 880w,
-		//res.cloudinary.com/dr88lzs3l/image/upload/c_scale,w_1080/q_auto,f_auto/v1467930888/foto-252_ccsnan.jpg 1080w"
-		src="//res.cloudinary.com/dr88lzs3l/image/upload/q_auto,f_auto/v1467930888/foto-252_ccsnan.jpg"
-		alt="Sillas Tiffany" class="img-fluid">
-	</div>
-	<div class="hidden-sm-down col-md-1"></div>
+<div class="contenedor">
+		{% assign paginas = site.html_pages | sort: 'orden' %}
+		{% for p in paginas %}
+			{% if p.title %}{% if p.cuadros == 1 %}
+				<div class="columns {{ p.size }} {{ p.title | downcase }}">
+					<figure>
+					{% if p.link == 1 %}
+						<a href="{{ p.url }}">
+							<picture>
+								<source 
+									media="(min-width: 980px)"
+									srcset="{{ p.image_gd }}">
+								<source 
+									media="(min-width: 490px)"
+									srcset="{{ p.image_md }}">
+								<img 
+									src="{{ p.image_ch }}" 
+									alt="{{ p.title }}">
+							</picture>
+							<h2>{{ p.title }}</h2>
+						</a>
+					{% else %}
+						<picture>
+							<source 
+								media="(min-width: 980px)"
+								srcset="{{ p.image_gd }}">
+							<source 
+								media="(min-width: 490px)"
+								srcset="{{ p.image_md }}">
+							<img 
+								src="{{ p.image_ch }}" 
+								alt="{{ p.title }}">
+						</picture>
+						<h2>{{ p.title }}</h2>
+					{% endif %}
+					</figure>
+				</div>
+			{% endif %}{% endif %}
+		{% endfor %}
 </div>
-<div class="row">
-	<div class="hidden-sm-down col-md-1"></div>
-	<div class="col-xs-6 col-md-6 col-lg-7 blanco fotona">
-		hola
+<div class="contenedor">
+	<p class="frase">Sólo tú sabes cuando algo puede pasar de una simple idea a un momento único, cuando la inspiración toma sentido y los recuerdos tienen tu sello.</p>
+</div>
+<div class="contenedor">
+	<div class="columns mitad telefonos">
+		<figure>
+			<picture>
+				<source 
+					media="(min-width: 980px)"
+					srcset="/img/llamar/llamar_gd.jpg">
+				<source 
+					media="(min-width: 490px)"
+					srcset="/img/llamar/llamar_md.jpg">
+				<img 
+					src="/img/llamar/llamar_ch.jpg" 
+					alt="Contacto sillas Tiffany">
+			</picture>
+			<div>
+				<h3>María</h3>
+				<a href="tel:+523338157303">33 38 15 73 03</a>
+				<h3>Lupita</h3>
+				<a href="tel:+523316708382">33 16 70 83 82</a>
+				<h3>José</h3>
+				<a href="tel:+523313504003">33 13 50 40 03</a>
+				<a href="tel:+523316705224">33 16 70 52 24</a>
+			</div>
+		</figure>
 	</div>
-	<div class="col-xs-6 col-md-4 col-lg-3">
-		<form action="https://formspree.io/webmaster@rentatiffany.com" method="POST">
-			<fieldset class="form-group">
-				<label for="formnombre">Nombre</label>
-				<input id="formnombre" type="text" name="nombre" placeholder="Nombre" class="form-control" />
-			</fieldset>
-			<fieldset class="form-group">
-				<label for="formemail">Email</label>
-				<input id="formemail" type="email" name="_replyto" placeholder="Tu email" class="form-control" />
-			</fieldset>
-			<fieldset class="form-group">
-				<label for="formtelefono">Teléfono</label>
-				<input id="formtelefono" type="tel" name="telefono" placeholder="Tu teléfono" class="form-control" />
-				<small class="text-muted">Cuidaremos muy bien tus datos personales.</small>
-			</fieldset>
-			<input type="hidden" name="_subject" value="Contacto en rentatiffany.com" />
-			<input type="text" name="_gotcha" style="display:none" />
-			<button type="submit" class="btn btn-primary">Enviar</button>
-		</form>
+	<div class="columns mitad cotizar">
+		<figure>
+			<a href="/cotizar/">
+				<picture>
+					<source 
+						media="(min-width: 980px)"
+						srcset="/img/cotizar/cotizar_gd.jpg">
+					<source 
+						media="(min-width: 490px)"
+						srcset="/img/cotizar/cotizar_md.jpg">
+					<img 
+						src="/img/cotizar/cotizar_ch.jpg" 
+						alt="Precios sillas Tiffany">
+				</picture>
+				<h2>Pide tu cotización</h2>
+			</a>
+		</figure>
 	</div>
-	<div class="hidden-sm-down col-md-1"></div>
 </div>
