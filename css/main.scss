@@ -241,3 +241,105 @@ footer {
 		margin: 0;
 	}
 }
+
+////////////////////////////////////////////////////
+.modal {
+    align-items: center;
+    bottom: 0;
+    display: none;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+.modal.active {
+    display: flex;
+    display: -ms-flexbox;
+    opacity: 1;
+    z-index: 1988;
+}
+.modal.active .modal-overlay {
+    background: rgba(0,0,0,.75);
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+@media screen and (min-width: 320px) {
+.modal-sm .modal-container {
+    width: 32rem;
+}}
+@media screen and (min-width: 640px) {
+.modal-container {
+    width: 64rem;
+}}
+.modal-container {
+    animation: slide-up .216s;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+    z-index: 1988;
+    background: #fff;
+    display: block;
+    border-radius: .3rem;
+    box-shadow: 0 .1rem .4rem rgba(0,0,0,.3);
+}
+.modal.active .modal-container {
+    animation: slide-down .216s;
+}
+.modal-container .modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.5rem;
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 0.3rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
+.btn.btn-primary {
+    border: 2px solid #666;
+    color: #333;
+    height: 2rem;
+}
+.btn.btn-clear {
+    background: transparent none repeat scroll 0 0;
+    border: 0 none;
+    color: #666;
+    height: 2rem;
+    margin-left: 0.3rem;
+    opacity: 0.45;
+    padding: 0;
+}
+.btn.btn-clear::before {
+    content: "×";
+    font-size: 2rem;
+}
+.float-right {
+    float: right!important;
+}
+@media screen and (max-width: 64em) and (min-width: 42em) {
+.btn {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+}}
+.modal-container .modal-header .modal-title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+.modal-container .modal-body {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 1.5rem;
+    position: relative;
+}

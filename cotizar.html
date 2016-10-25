@@ -6,22 +6,61 @@ class: centradito
 cuadros: 0
 ---
 
-		<form action="https://formspree.io/webmaster@rentatiffany.com" method="POST" class="pure-form pure-form-stacked">
-			<legend>Mándanos tus datos y nos comunicamos contigo</legend>
-			<fieldset>
-				<label for="formnombre">Nombre:</label>
-				<input id="formnombre" type="text" name="nombre" placeholder="Nombre" class="form-control" required />
-				
-				<label for="formemail">Email:</label>
-				<input id="formemail" type="email" name="_replyto" placeholder="Tu email" class="form-control" required />
-				
-				<label for="formtelefono">Teléfono:</label>
-				<input id="formtelefono" type="tel" name="telefono" placeholder="Tu teléfono" class="form-control" required />
-				
-				<small class="text-muted">Cuidaremos muy bien tus datos personales.</small>
-			</fieldset>
-			<input type="hidden" name="_subject" value="Contacto en rentatiffany.com" />
-			<input type="hidden" name="_cc" value="{{ site.email }}" />
-			<input type="text" name="_gotcha" style="display:none" />
-			<button type="submit" class="btn btn-primary">Enviar</button>
-		</form>
+<script src="/js/vendor/ajaxable.min.js"></script>
+
+<form id="contactoRT" action="https://formspree.io/webmaster@rentatiffany.com" method="POST" class="pure-form pure-form-stacked">
+	<legend>Mándanos tus datos y nos comunicamos contigo</legend>
+	<fieldset>
+		<label for="formnombre">Nombre:</label>
+		<input id="formnombre" type="text" name="nombre" placeholder="Nombre" class="form-control" required />
+
+		<label for="formemail">Email:</label>
+		<input id="formemail" type="email" name="_replyto" placeholder="Tu email" class="form-control" required />
+
+		<label for="formtelefono">Teléfono:</label>
+		<input id="formtelefono" type="tel" name="telefono" placeholder="Tu teléfono" class="form-control" required />
+
+		<small class="text-muted">Cuidaremos muy bien tus datos personales.</small>
+	</fieldset>
+	<input type="hidden" name="_subject" value="Contacto en rentatiffany.com" />
+	<input type="hidden" name="_cc" value="{{ site.email }}" />
+	<input type="text" name="_gotcha" style="display:none" />
+	<button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+<div class="modal modal-sm" id="modalEl">
+	<div class="modal-overlay" onclick="hideModal()"></div>
+	<div class="modal-container">
+		<div class="modal-header">
+			<button class="btn btn-clear float-right" onclick="hideModal()"></button>
+			<div class="modal-title">Datos enviados</div>
+		</div>
+		<div class="modal-body">
+			<div class="content" id="modal-content">Hecho.
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+      var modal = document.getElementById('modalEl');
+      var modalBody = document.getElementById('modal-content');
+      var hideModal = function() {
+      	modal.className = 'modal modal-sm';
+      };
+      var showModal = function(body) {
+		modal.className = 'modal active modal-sm';
+		modalBody.innerHTML = body || '';
+      };
+
+      ajaxable('#contactoRT', {
+			responseType: ''
+      	})
+      	.onResponse(function(res) {
+			if (JSON.parse(res).success == "email sent") {
+				showModal("¡Gracias! Nos comunicaremos contigo en un momento.");
+			} else {
+				showModal(JSON.parse(res).success);
+			}
+      	});
+</script>
