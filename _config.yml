@@ -5,6 +5,7 @@ description: Renta de mobiliario y vajilla para eventos en Guadalajara, especial
 url: "https://www.rentatiffany.com" # the base hostname & protocol for your site
 enforce_ssl: www.rentatiffany.com
 email: info@rentatiffany.com
+googlePlus: https://plus.google.com/115244237457002800168/
 
 # Build settings
 markdown: kramdown
