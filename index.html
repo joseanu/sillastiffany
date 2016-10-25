@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% comment %}<script type='application/ld+json'>
+<script type='application/ld+json'>
   {
     "@context": "http://schema.org",
     "@type":"LocalBusiness",
@@ -10,13 +10,13 @@ layout: default
     "description": "{{ site.description }}",
     "url":"{{ site.url }}",
     "logo": "{{ '/img/logo.svg' | prepend: site.baseurl }}",
-    "hasMap": "{{ site.gmaps }}",
     "email": "mailto:{{ site.email }}",
     "telephone": "331 3504 003",
     "telephone": "333 8157 303",
     "telephone": "331 6708 382",
     "telephone": "331 6705 224",
-    "openingHours": "Mo-Sa 9:00-18:00",
+    "openingHours": "Mo-Fr 9:00-18:00",
+    "openingHours": "Sa 9:00-13:00",
     "areaServed": {
         "@type": "GeoCircle",
         "geoMidpoint": {
@@ -26,20 +26,12 @@ layout: default
         },
         "geoRadius": "16500"
 	},
-    "address": {
-		"@type": "PostalAddress",
-		"addressLocality": "{{ page.ciudad }}",
-		"addressRegion": "{{ page.estado }}",
-		"addressCountry": "MX",
-		"postalCode": "{{ page.cp }}",
-		"streetAddress": "{{ page.direccion1 }}{% if page.direccion2 %} {{ page.direccion2 }}{% endif %}"
-	},
     "sameAs": [
     	"{{ site.facebook }}",
     	"{{ site.googlePlus }}"
     ]
   }
-</script>{% endcomment %}
+</script>
 
 <div class="contenedor">
 		{% assign paginas = site.html_pages | sort: 'orden' %}
@@ -99,12 +91,12 @@ layout: default
 					alt="Contacto sillas Tiffany">
 			</picture>
 			<div>
-				<h3>María</h3>
+				<h3>Ana María</h3>
 				<a href="tel:+523338157303">33 38 15 73 03</a>
-				<h3>Lupita</h3>
 				<a href="tel:+523316708382">33 16 70 83 82</a>
-				<h3>José</h3>
+				<h3>Mauricio</h3>
 				<a href="tel:+523313504003">33 13 50 40 03</a>
+				<h3>José</h3>
 				<a href="tel:+523316705224">33 16 70 52 24</a>
 			</div>
 		</figure>
