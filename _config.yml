@@ -2,8 +2,8 @@
 # Site settings
 title: Renta de Mesas y Sillas Tiffany
 description: Renta de mobiliario y vajilla para eventos en Guadalajara, especializados en sillas tiffany.
-baseurl: ""
-url: "http://www.rentatiffany.com" # the base hostname & protocol for your site
+url: "https://www.rentatiffany.com" # the base hostname & protocol for your site
+enforce_ssl: www.rentatiffany.com
 email: info@rentatiffany.com
 
 # Build settings
