@@ -1,6 +1,46 @@
 ---
 layout: default
 ---
+
+{% comment %}<script type='application/ld+json'>
+  {
+    "@context": "http://schema.org",
+    "@type":"LocalBusiness",
+    "name": "{{ site.title }}",
+    "description": "{{ site.description }}",
+    "url":"{{ site.url }}",
+    "logo": "{{ '/img/logo.svg' | prepend: site.baseurl }}",
+    "hasMap": "{{ site.gmaps }}",
+    "email": "mailto:{{ site.email }}",
+    "telephone": "331 3504 003",
+    "telephone": "333 8157 303",
+    "telephone": "331 6708 382",
+    "telephone": "331 6705 224",
+    "openingHours": "Mo-Sa 9:00-18:00",
+    "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+        "@type": "GeoCoordinates",
+            "latitude": "20.666111",
+            "longitude": "-103.351944"
+        },
+        "geoRadius": "16500"
+	},
+    "address": {
+		"@type": "PostalAddress",
+		"addressLocality": "{{ page.ciudad }}",
+		"addressRegion": "{{ page.estado }}",
+		"addressCountry": "MX",
+		"postalCode": "{{ page.cp }}",
+		"streetAddress": "{{ page.direccion1 }}{% if page.direccion2 %} {{ page.direccion2 }}{% endif %}"
+	},
+    "sameAs": [
+    	"{{ site.facebook }}",
+    	"{{ site.googlePlus }}"
+    ]
+  }
+</script>{% endcomment %}
+
 <div class="contenedor">
 		{% assign paginas = site.html_pages | sort: 'orden' %}
 		{% for p in paginas %}
@@ -42,7 +82,7 @@ layout: default
 		{% endfor %}
 </div>
 <div class="contenedor">
-	<p class="frase">Sólo tú sabes cuando algo puede pasar de una simple idea a un momento único, cuando la inspiración toma sentido y los recuerdos tienen tu sello.</p>
+	<p class="frase">Renta de sillas Tiffany, mesas, manteles, cristaleria y vajilla para tus eventos. Cotiza sin compromiso y pregunta por nuestras promociones.</p>
 </div>
 <div class="contenedor">
 	<div class="columns mitad telefonos">
