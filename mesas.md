@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Mesas
+title: Renta Mesas
 permalink: /mesas/
 cuadros: 1
 link: 0

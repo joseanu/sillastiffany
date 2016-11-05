@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Vajilla
+title: Renta Vajilla
 permalink: /vajilla/
 cuadros: 1
 link: 0

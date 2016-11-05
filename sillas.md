@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Sillas
+title: Renta Sillas
 permalink: /sillas/
 cuadros: 1
 link: 0

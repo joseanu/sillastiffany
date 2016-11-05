@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Manteles
+title: Renta Manteles
 permalink: /manteles/
 cuadros: 1
 link: 0
